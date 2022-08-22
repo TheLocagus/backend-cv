@@ -1,22 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { Contact } from './contact.entity';
-import { ContactResponseType } from '../types/contact/contact';
+import { ContactResponseInterface } from '../types';
 
 @Injectable()
 export class ContactService {
-  async findAll(): Promise<ContactResponseType> {
+  async findAll(): Promise<ContactResponseInterface> {
     try {
       const contacts = await Contact.find({
         order: { id: 'ASC' },
       });
       return {
         contacts,
-        success: true,
       };
     } catch (e) {
-      return {
-        success: false,
-      };
+      throw new Error('Something went wrong in ContactService findAll');
     }
   }
 }

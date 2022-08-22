@@ -1,10 +1,10 @@
-import { ProjectResponseType } from '../project';
-import { ContactResponseType } from '../contact/contact';
+import { ProjectResponseInterface } from '../project';
+import { ContactResponseInterface } from '../contact';
 
 export type DataResponseType =
   | {
-      projects: ProjectResponseType;
-      contacts: ContactResponseType;
+      projects: ProjectResponseInterface;
+      contacts: ContactResponseInterface;
       success: true;
     }
   | {

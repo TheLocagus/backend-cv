@@ -1,16 +1,16 @@
-import { ProjectInterface } from '../project';
-
 export interface ContactInterface {
   id: string;
   imgName: string;
   value: string;
+  url: string;
+  type: DynamicButtonEnum;
 }
 
-export type ContactResponseType =
-  | {
-      contacts: ContactInterface[];
-      success: true;
-    }
-  | {
-      success: false;
-    };
+export interface ContactResponseInterface {
+  contacts: ContactInterface[];
+}
+
+export enum DynamicButtonEnum {
+  copy = 'copy',
+  redirect = 'redirect',
+}
