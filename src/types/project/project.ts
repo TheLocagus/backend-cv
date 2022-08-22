@@ -10,11 +10,6 @@ export interface ProjectInterface {
   demoUrl: string;
 }
 
-export type ProjectResponseType =
-  | {
-      projects: ProjectInterface[];
-      success: true;
-    }
-  | {
-      success: false;
-    };
+export interface ProjectResponseInterface {
+  projects: ProjectInterface[];
+}
