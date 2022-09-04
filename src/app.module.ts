@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { ProjectModule } from './project/project.module';
 import { ContactModule } from './contact/contact.module';
+import { BannerService } from './banner/banner.service';
 
 @Module({
   imports: [
@@ -12,6 +13,6 @@ import { ContactModule } from './contact/contact.module';
     forwardRef(() => ContactModule),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, BannerService],
 })
 export class AppModule {}

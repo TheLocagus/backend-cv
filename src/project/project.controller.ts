@@ -5,8 +5,8 @@ import { ProjectService } from './project.service';
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
-  @Get()
-  findAll() {
-    return this.projectService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.projectService.findAll();
+  // }
 }

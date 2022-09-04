@@ -8,6 +8,7 @@ export interface ContactInterface {
 
 export interface ContactResponseInterface {
   contacts: ContactInterface[];
+  title: 'Contact' | 'Kontakt';
 }
 
 export enum DynamicButtonEnum {
