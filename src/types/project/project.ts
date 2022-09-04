@@ -8,8 +8,15 @@ export interface ProjectInterface {
   frontUrl: string;
   backUrl: string;
   demoUrl: string;
+  language: LanguageEnum;
 }
 
 export interface ProjectResponseInterface {
   projects: ProjectInterface[];
+  title: 'My projects' | 'Moje projekty';
+}
+
+export enum LanguageEnum {
+  polish = 'pl',
+  english = 'eng',
 }

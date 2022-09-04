@@ -1,5 +1,13 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ProjectInterface } from '../types/project';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { LanguageEnum, ProjectInterface } from "../types";
 
 @Entity()
 export class Project extends BaseEntity implements ProjectInterface {
@@ -15,11 +23,13 @@ export class Project extends BaseEntity implements ProjectInterface {
     length: 150,
   })
   demoUrl: string;
+
   @Column({
     nullable: false,
     type: 'longtext',
   })
   describe: string;
+
   @Column({
     nullable: false,
     length: 150,
@@ -35,4 +45,11 @@ export class Project extends BaseEntity implements ProjectInterface {
     length: 50,
   })
   title: string;
+
+  @Column({
+    nullable: false,
+    type: 'enum',
+    enum: LanguageEnum,
+  })
+  language: LanguageEnum;
 }
