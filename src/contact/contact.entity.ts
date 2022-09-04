@@ -8,7 +8,7 @@ export class Contact extends BaseEntity implements ContactInterface {
 
   @Column({
     nullable: false,
-    length: 80,
+    length: 90,
   })
   imgName: string;
 
